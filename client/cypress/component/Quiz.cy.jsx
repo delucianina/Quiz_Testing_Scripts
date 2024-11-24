@@ -21,7 +21,22 @@ describe('<Quiz />', () => {
       // Wait for the API call to complete
       cy.wait('@getQuestions');
 
+
+
       // TODO: Complete the test code to answer both mock questions and ensure the score is correct at the end of the quiz
+
+        // Answer the first question
+        cy.get('button').contains('2').click();
+  
+        // Answer the second question
+        cy.get('button').contains('3').click();
+  
+        // Check the final score
+        cy.get('div').contains('2');
+
+        // take a new quiz 
+        cy.get('button').contains('Take New Quiz').click();
+
     });
   });
 });
